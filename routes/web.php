@@ -54,3 +54,9 @@ Route::post('/category/add', [
 Route::get('/category/edit/{id}', [
     CategoryController::class, 'edit'
 ]);
+Route::post('/category/edit/{id}', [
+    CategoryController::class, 'edit_action'
+]);
+Route::post('/category/delete/{id}', [
+    CategoryController::class, 'delete_action'
+]);

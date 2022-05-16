@@ -34,10 +34,12 @@
                       Edit
                     </button>
                   </a>
-
-                  <button class="btn btn-danger">
-                    Delete
-                  </button>
+                  <form method="POST" action="/category/delete/{{$category->id}}">
+                    @csrf
+                    <button class="btn btn-danger" type="submit">
+                      Delete
+                    </button>
+                  </form>
                 </td>
               </tr>
           @endforeach

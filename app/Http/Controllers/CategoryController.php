@@ -35,4 +35,16 @@ class CategoryController extends Controller
             'name' => $category -> name
         ]);
     }
+
+    function edit_action(Request $request) {
+        $id = $request->route('id');
+        Category::where(['id' => $id]) -> update(['name' => $request -> name]);
+        return redirect('/category');
+    }
+
+    function delete_action(Request $request) {
+        $id = $request->route('id');
+        Category::where(['id' => $id]) -> delete();
+        return redirect('/category');
+    }
 }
